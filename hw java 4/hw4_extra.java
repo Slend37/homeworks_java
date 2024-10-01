@@ -9,10 +9,9 @@ public class Main
         System.out.println("Напишите фразу: ");
         String str = reader.nextLine();
         String[] words = str.split(" ");
-        for (int i = 0; i<words.length; i++){
+        for (int i = 0; i < words.length; i++){
             String word = new String();
             word = words[i];
-            
             for (int j = 0; j < word.length(); j++){
                 if (Character.isAlphabetic(word.charAt(j))){
                     continue;
