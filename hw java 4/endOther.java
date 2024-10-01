@@ -10,7 +10,7 @@ public boolean endOther(String a, String b) {
     adds = a.toLowerCase();
   }
   
-  if (main.substring(main.length()-adds.length(),main.length()).equals(adds)){
+  if (main.substring(main.length() - adds.length(), main.length()).equals(adds)){
     return true;
   }else{
     return false;
