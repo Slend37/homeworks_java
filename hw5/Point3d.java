@@ -12,7 +12,7 @@ public class Point3d {
     }
 
     public Point3d(){
-        this(0,0,0);
+        this(0, 0, 0);
     }
 
     public double getX() {
