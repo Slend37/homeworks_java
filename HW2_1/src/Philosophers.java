@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Philosophers {
     public static void main(String[] args) {
-        String[] Phils = {"Platon", "Sokrat", "Aristotel", "Marks", "Pifagor"}; // number of philosophers
+        String[] Phils = {"Platon", "Sokrat", "Aristotel", "Marks", "Pifagor"}; // PHILOSOPHERS
         Lock[] forks = new Lock[Phils.length]; // array with forks
         Main[] phils_array = new Main[Phils.length]; // array with philosophers
 
