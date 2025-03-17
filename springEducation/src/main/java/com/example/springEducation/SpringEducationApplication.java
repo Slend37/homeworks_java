@@ -15,5 +15,10 @@ public class SpringEducationApplication {
 		Person me = context.getBean("student", Person.class);
 		SpringApplication.run(SpringEducationApplication.class, args);
 		System.out.println(me);
+
+		WeaponShow weaponShow = context.getBean("weaponShow", WeaponShow.class);
+		weaponShow.show();
+		context.close();
+		context.close();
 	}
 }

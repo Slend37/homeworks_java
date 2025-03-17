@@ -3,9 +3,9 @@ package com.example.springEducation;
 import java.util.Date;
 
 public class Person {
-    String firstName;
-    String secondName;
-    Date birth;
+    private String firstName;
+    private String secondName;
+    private Date birth;
 
     public Person(String firstName, String secondName, Date birth) {
         this.firstName = firstName;
