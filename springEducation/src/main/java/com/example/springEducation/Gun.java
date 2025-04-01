@@ -1,7 +1,14 @@
 package com.example.springEducation;
 
-public class Gun implements Weapon{
-    int bullets, fireRate, recharge, damage;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("singleton")
+public class Gun implements Weapon {
+    private int bullets, fireRate, recharge, damage;
 
     public int getBullets() {
         return bullets;
@@ -35,6 +42,7 @@ public class Gun implements Weapon{
         this.damage = damage;
     }
 
+
     @Override
     public int getPrice() {
         return 1000 + bullets * 20 + fireRate * 300 - recharge * 100 + damage * 5;
@@ -43,5 +51,15 @@ public class Gun implements Weapon{
     @Override
     public float getKillTime() {
         return (float) 100 / damage;
+    }
+
+    @PostConstruct
+    public void onInit() {
+        System.out.println("Gun initialize");
+    }
+
+    @PreDestroy
+    public void onDestroy() {
+        System.out.println("Gun destroy");
     }
 }

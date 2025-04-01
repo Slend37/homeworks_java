@@ -12,7 +12,10 @@
         <constructor-arg index="2" value="November 11, 2005"/>
     </bean>
     <bean id="gunBean"
-          class="com.example.springEducation.Gun">
+          class="com.example.springEducation.Gun"
+            init-method="onInit"
+            destroy-method="onDestroy"
+    >
         <property name="bullets" value="${gunBean.bullets}"/>
         <property name="fireRate" value="${gunBean.fireRate}"/>
         <property name="recharge" value="${gunBean.recharge}"/>
@@ -20,15 +23,16 @@
 
     </bean>
 
-<!--    <bean id="rifleBean"-->
-<!--          class="com.example.springEducation.Rifle">-->
-<!--        <property name="bullets" value="${rifleBean.bullets}"/>-->
-<!--        <property name="fireRate" value="${rifleBean.fireRate}"/>-->
-<!--        <property name="recharge" value="${rifleBean.recharge}"/>-->
-<!--        <property name="damage" value="${rifleBean.damage}"/>-->
+    <bean id="rifleBean"
+          class="com.example.springEducation.Rifle">
+        <property name="bullets" value="${rifleBean.bullets}"/>
+        <property name="fireRate" value="${rifleBean.fireRate}"/>
+        <property name="recharge" value="${rifleBean.recharge}"/>
+        <property name="damage" value="${rifleBean.damage}"/>
 
-<!--    </bean>-->
+    </bean>
     <bean id="weaponShow"
+          scope="singleton"
           class="com.example.springEducation.WeaponShow">
         <constructor-arg ref="gunBean"/>
     </bean>

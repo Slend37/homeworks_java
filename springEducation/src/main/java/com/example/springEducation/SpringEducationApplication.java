@@ -19,6 +19,5 @@ public class SpringEducationApplication {
 		WeaponShow weaponShow = context.getBean("weaponShow", WeaponShow.class);
 		weaponShow.show();
 		context.close();
-		context.close();
 	}
 }

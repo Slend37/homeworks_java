@@ -1,7 +1,7 @@
 package com.example.springEducation;
 
 public class Rifle implements Weapon{
-    int bullets, fireRate, recharge, damage;
+    private int bullets, fireRate, recharge, damage;
 
     public int getBullets() {
         return bullets;
