@@ -2,22 +2,19 @@ package com.example.springEducation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SpringBootApplication
 public class SpringEducationApplication {
 
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"applicationContext.xml"
-		);
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		Person me = context.getBean("student", Person.class);
 		SpringApplication.run(SpringEducationApplication.class, args);
-		System.out.println(me);
-
-		WeaponShow weaponShow = context.getBean("weaponShow", WeaponShow.class);
+		WeaponShow weaponShow = context.getBean(WeaponShow.class);
 		weaponShow.show();
-		context.close();
+
 	}
 }

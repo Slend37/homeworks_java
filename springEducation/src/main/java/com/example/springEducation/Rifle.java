@@ -1,7 +1,19 @@
 package com.example.springEducation;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("rifle")
+@Scope("prototype")
 public class Rifle implements Weapon{
     private int bullets, fireRate, recharge, damage;
+
+    public Rifle(){
+        this.bullets=30;
+        this.fireRate=4;
+        this.recharge=3;
+        this.damage=95;
+    }
 
     public int getBullets() {
         return bullets;

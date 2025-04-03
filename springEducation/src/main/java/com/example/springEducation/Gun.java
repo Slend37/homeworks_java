@@ -5,11 +5,17 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope("singleton")
+@Component("gun")
+@Scope("prototype")
 public class Gun implements Weapon {
     private int bullets, fireRate, recharge, damage;
 
+    public Gun(){
+        this.bullets=20;
+        this.fireRate=2;
+        this.recharge=3;
+        this.damage=20;
+    }
     public int getBullets() {
         return bullets;
     }
