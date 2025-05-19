@@ -5,9 +5,9 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("gun")
+@Component
 @Scope("prototype")
-public class Gun implements Weapon {
+public class Gun extends Weapon {
     private int bullets, fireRate, recharge, damage;
 
     public Gun(){
@@ -16,6 +16,15 @@ public class Gun implements Weapon {
         this.recharge=3;
         this.damage=20;
     }
+
+    public Gun(String name, int bullets, int fireRate, int recharge, int damage){
+        this.name = name;
+        this.bullets=bullets;
+        this.fireRate=fireRate;
+        this.recharge=recharge;
+        this.damage=damage;
+    }
+
     public int getBullets() {
         return bullets;
     }

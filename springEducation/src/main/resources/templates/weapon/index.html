@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Weapons</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div[th\\:each] {
+    margin: 8px 0;
+}
+
+div[th\\:each] a {
+    text-decoration: none;
+    color: #2980b9;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+div[th\\:each] a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+button {
+    margin: 15px 10px 0 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+}
+
+button a:hover {
+    text-decoration: underline;
+}
+
+body > button {
+    display: inline-block;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+    </style>
+</head>
+<body>
+
+<div th:each="weapon: ${weapons}">
+    <a th:href="@{/weapons/{name}(name=${weapon.getName()})}" th:text="${weapon.getName()}">Name weapon</a>
+</div>
+<button>
+    <a th:href="@{weapons/gun}">Create Gun</a>
+</button>
+<button>
+    <a th:href="@{weapons/rifle}">Create Rifle</a>
+</button>
+<button>
+    <a th:href="@{weapons/knife}">Create Knife</a>
+</button>
+</body>
+</html>

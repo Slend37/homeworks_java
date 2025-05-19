@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Knife Form</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    margin: 40px;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    background: #ffffff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 15px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+input[type="submit"] {
+    margin-top: 25px;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+    </style>
+</head>
+<body>
+<h1>Knife</h1>
+<form th:method="POST" th:action="@{/weapons/knife}" th:object="${knife}">
+    <label for="name">Enter name knife:</label><br>
+    <input type="text" id="name" th:field="*{name}">
+    <br/>
+    <label for="price">Price:</label><br>
+    <input type="number" id="price" th:field="*{price}">
+    <br/>
+    <label for="killTime">Kill Time:</label><br>
+    <input type="number" id="killTime" th:field="*{killTime}">
+    <br/>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -3,9 +3,9 @@ package com.example.springEducation;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("rifle")
+@Component
 @Scope("prototype")
-public class Rifle implements Weapon{
+public class Rifle extends Weapon{
     private int bullets, fireRate, recharge, damage;
 
     public Rifle(){
@@ -13,6 +13,14 @@ public class Rifle implements Weapon{
         this.fireRate=4;
         this.recharge=3;
         this.damage=95;
+    }
+
+    public Rifle(String name, int bullets, int fireRate, int recharge, int damage){
+        this.name=name;
+        this.bullets=bullets;
+        this.fireRate=fireRate;
+        this.recharge=recharge;
+        this.damage=damage;
     }
 
     public int getBullets() {

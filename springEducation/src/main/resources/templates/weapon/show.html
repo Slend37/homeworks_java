@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weapon</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    margin: 40px;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #34495e;
+}
+
+h2 span {
+    color: #2980b9;
+    font-weight: 700;
+}
+
+form {
+    margin-top: 30px;
+}
+
+form input[type="submit"] {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+}
+
+button a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+<h2>Name: <span th:text="${weapon.getName()}"></span></h2>
+<h2>Price: <span th:text="${weapon.getPrice()}"></span></h2>
+<h2>Kill Time: <span th:text="${weapon.getKillTime()}"></span></h2>
+
+<form th:method="delete" th:action="@{'/weapons/' + ${weapon.getName()}}">
+    <input type="submit" th:value="'Delete ' + ${weapon.getName()}">
+</form>
+<button>
+    <a th:href="@{'/weapons/update/' + ${weapon.getName()}}">Update Weapon</a>
+</button>
+</body>
+</html>
