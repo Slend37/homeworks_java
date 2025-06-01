@@ -36,7 +36,8 @@ label {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+ input[type="url"]{
     width: 100%;
     padding: 8px 10px;
     border: 1px solid #ccc;
@@ -81,6 +82,9 @@ input[type="submit"]:hover {
     <br/>
     <label for="killTime">Kill Time:</label><br>
     <input type="number" id="killTime" th:field="*{killTime}">
+    <br/>
+    <label for="url">URL to Image:</label><br>
+    <input type="url" id="url" th:field="*{url}">
     <br/>
     <input type="submit" value="Submit">
 </form>

@@ -79,23 +79,10 @@ body > button {
          padding: 12px;               /* внутренние отступы для удобочитаемости */
         text-align: left;           /* выравнивание текста по левому краю */
     }
-        #sort {
+        #unsort {
         position: fixed;
         top: 50px;
         right: 700px;
-        background-color: #e74c3c;
-        border: none;
-        color: white;
-        padding: 12px 26px;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        }
-                #sort2 {
-        position: fixed;
-        top: 100px;
-        right: 686px;
         background-color: #e74c3c;
         border: none;
         color: white;
@@ -140,21 +127,18 @@ body > button {
     </tbody>
 </table>
 
-<button id="sort">
-    <a th:href="@{weapons/sort}">Sort by Price</a>
-</button>
-<button id="sort2">
-    <a th:href="@{weapons/sort2}">Sort by Kill Time</a>
+<button id="unsort">
+    <a href="javascript:history.back()">Sort by id</a>
 </button>
 
 <button>
-    <a th:href="@{weapons/gun}">Create Gun</a>
+    <a th:href="@{gun}">Create Gun</a>
 </button>
 <button>
-    <a th:href="@{weapons/rifle}">Create Rifle</a>
+    <a th:href="@{rifle}">Create Rifle</a>
 </button>
 <button>
-    <a th:href="@{weapons/knife}">Create Knife</a>
+    <a th:href="@{knife}">Create Knife</a>
 </button>
 
 

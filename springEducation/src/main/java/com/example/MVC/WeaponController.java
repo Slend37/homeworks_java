@@ -27,6 +27,19 @@ public class WeaponController {
         return "weapon/index";
     }
 
+    @GetMapping("/sort")
+    public String sort(Model model)
+    {
+        model.addAttribute("weapons", weaponDAO.sortPrice());
+        return "weapon/index2";
+    }
+    @GetMapping("/sort2")
+    public String sort2(Model model)
+    {
+        model.addAttribute("weapons", weaponDAO.sortKillTime());
+        return "weapon/index2";
+    }
+
     @GetMapping("/{name}")
     public String show(@PathVariable("name") String name, Model model)
     {

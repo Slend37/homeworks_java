@@ -36,7 +36,8 @@ label {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+ input[type="url"]{
     width: 100%;
     padding: 8px 10px;
     border: 1px solid #ccc;
@@ -87,6 +88,9 @@ input[type="submit"]:hover {
     <br/>
     <label for="damage">Damage:</label><br>
     <input type="number" id="damage" th:field="*{damage}" th:value="${gun.getDamage()}">
+    <br/>
+    <label for="url">URL to Image:</label><br>
+    <input type="url" id="url" th:field="*{url}" th:value="${gun.getURL()}">
     <br/>
     <input type="submit" value="Submit">
 </form>

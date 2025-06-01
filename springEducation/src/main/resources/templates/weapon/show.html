@@ -75,6 +75,7 @@ button a:hover {
 <h2>Name: <span th:text="${weapon.getName()}"></span></h2>
 <h2>Price: <span th:text="${weapon.getPrice()}"></span></h2>
 <h2>Kill Time: <span th:text="${weapon.getKillTime()}"></span></h2>
+<img th:src="${weapon.getURL()}">
 
 <form th:method="delete" th:action="@{'/weapons/' + ${weapon.getName()}}">
     <input type="submit" th:value="'Delete ' + ${weapon.getName()}">

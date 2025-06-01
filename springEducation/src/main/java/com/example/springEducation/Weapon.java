@@ -10,4 +10,5 @@ public abstract class Weapon {
     }
     public abstract int getPrice();
     public abstract float getKillTime();
+    public abstract String getURL();
 }

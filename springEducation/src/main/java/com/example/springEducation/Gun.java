@@ -9,20 +9,23 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class Gun extends Weapon {
     private int bullets, fireRate, recharge, damage;
+    private String url;
 
     public Gun(){
         this.bullets=20;
         this.fireRate=2;
         this.recharge=3;
         this.damage=20;
+        this.url = "https://www.air-gun.ru/images/news/4878.jpg";
     }
 
-    public Gun(String name, int bullets, int fireRate, int recharge, int damage){
+    public Gun(String name, int bullets, int fireRate, int recharge, int damage, String url){
         this.name = name;
         this.bullets=bullets;
         this.fireRate=fireRate;
         this.recharge=recharge;
         this.damage=damage;
+        this.url = url;
     }
 
     public int getBullets() {
@@ -57,6 +60,13 @@ public class Gun extends Weapon {
         this.damage = damage;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     @Override
     public int getPrice() {
@@ -66,6 +76,11 @@ public class Gun extends Weapon {
     @Override
     public float getKillTime() {
         return (float) 100 / damage;
+    }
+
+    @Override
+    public String getURL() {
+        return url;
     }
 
     @PostConstruct

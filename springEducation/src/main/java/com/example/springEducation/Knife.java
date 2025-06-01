@@ -8,16 +8,27 @@ import org.springframework.stereotype.Component;
 public class Knife extends Weapon{
     private int price;
     private float killTime;
+    private String url;
 
     public Knife(){
         this.price = 500;
         this.killTime = 3.0f;
+        this.url = "https://i.pinimg.com/736x/a1/c7/e3/a1c7e3ca4646efee93c76bd4d141329b.jpg";
     }
 
-    public Knife(String name, int price, float killTime){
+    public Knife(String name, int price, float killTime, String url){
         this.name = name;
         this.price = price;
         this.killTime = killTime;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public void setPrice(int price) {
@@ -36,5 +47,10 @@ public class Knife extends Weapon{
     @Override
     public float getKillTime() {
         return killTime;
+    }
+
+    @Override
+    public String getURL() {
+        return url;
     }
 }
